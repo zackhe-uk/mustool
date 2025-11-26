@@ -13,8 +13,12 @@
 short map_musToMid(short chan, musheader_t musH)
 {
     short pChan = chan;
-    
-    if(chan == 15) 
+    if(chan == 9)
+    {
+        // Avoid overmap of channels
+        pChan = 15;
+    }
+    else if(chan == 15) 
     {
         // MUS chan percussion mapping
         pChan = 9;
